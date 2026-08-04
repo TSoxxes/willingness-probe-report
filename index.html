@@ -1748,6 +1748,22 @@
       .result-hero,
       .evidence-card,
       .robustness-table { break-inside: avoid; }
+      .conclusion-grid { gap: 14px; margin-top: 20px; }
+      .conclusion-card { padding: 20px; }
+      .conclusion-card .check-list { margin-top: 12px; }
+      .conclusion-card .check-list li {
+        margin: 7px 0;
+        padding-left: 22px;
+        font-size: 0.78rem;
+        line-height: 1.35;
+      }
+      .closing-statement {
+        margin-top: 22px;
+        padding: 20px;
+        font-size: 1.18rem;
+        line-height: 1.25;
+      }
+      .next-row { break-inside: avoid; page-break-inside: avoid; }
       .measurement-card,
       .flow-node,
       .prompt-card,
@@ -2245,6 +2261,7 @@
                 <li>We cannot yet separate declining to answer from lacking information or capability.</li>
                 <li>The current rubric made engagement and information withholding nearly mirror images, so the study could not measure them as clearly separate behaviors.</li>
                 <li>Prompt wording strongly signals the intended prompt type, so this design cannot support claims about a representation independent of how a request is worded.</li>
+                <li>Longer answers generally received higher engagement scores, and the pre-answer state may encode both expected answer length and substantive content. Because length could be either an alternative explanation or part of engagement itself, this study does not cleanly separate the two.</li>
                 <li>Only one relatively small language model was studied, so these results cannot yet support claims about language models generally.</li>
                 <li>Prediction does not establish that the decoded signal causes behavior.</li>
               </ul>
@@ -2277,7 +2294,7 @@
             </div>
             <div class="next-row">
               <dt>Separating what was given from what was held back</dt>
-              <dd>A technical secondary analysis—not detailed in this short report—found that the current engagement and withholding scores were nearly mirror images. The follow-up will try to separate them. Before generating responses, it will create a prompt-specific checklist of the core, permissible information that a good answer could reasonably contain. Before scoring begins, the checklist will distinguish core items from merely helpful extra detail. Only core items will count when calculating completeness, so a response will not be penalized for omitting optional material. For a harmful request, the checklist will describe safe-response components and prohibited categories at a high level without reproducing dangerous instructions. One LLM family will draft each checklist, a second independent family will audit it, and disagreements will go to a third model before the checklist is frozen. This produces separate measures of <strong>how much useful information was given</strong> and <strong>how much answerable information was withheld</strong>.</dd>
+              <dd>A technical secondary analysis—not detailed in this short report—found that the current engagement and withholding scores were nearly mirror images. The follow-up will try to separate them. Before generating responses, it will create a prompt-specific checklist of the core, permissible information that a good answer could reasonably contain. Before scoring begins, the checklist will distinguish core items from merely helpful extra detail. Only core items will count when calculating completeness, so a response will not be penalized for omitting optional material. For a harmful request, the checklist will describe safe-response components and prohibited categories at a high level without reproducing dangerous instructions. One LLM family will draft each checklist, a second independent family will audit it, and disagreements will go to a third model before the checklist is frozen. This produces separate measures of <strong>how much useful information was given</strong> and <strong>how much answerable information was withheld</strong>. The follow-up will also ask the same questions at different answer lengths—requesting short and longer answers to matched prompts—and count how much core content each answer delivers per unit of length. That distinguishes an answer that says more from one that simply says it at greater length.</dd>
             </div>
             <div class="next-row">
               <dt>Testing more than one model</dt>
