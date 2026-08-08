@@ -1,6 +1,6 @@
-# Willingness Probe public report
+# Engagement Probe public report
 
-This repository hosts the public-facing report for the Willingness Probe research project.
+This repository hosts the public-facing report for the Engagement Probe research project.
 
 - [Read the report online](https://tsoxxes.github.io/willingness-probe-report/)
 - [Download the PDF](https://tsoxxes.github.io/willingness-probe-report/willingness_probe_report.pdf)
